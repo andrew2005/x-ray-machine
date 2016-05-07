@@ -8,7 +8,7 @@ module XRayMachine
       ActiveSupport.on_load(:action_controller) do
         include XRayMachine::Summary::Runtime
 
-        before_filter do
+        before_action do
           XRayMachine::LogSubscriber.reset_runtimes
         end
       end
